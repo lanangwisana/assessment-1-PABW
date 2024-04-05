@@ -16,4 +16,16 @@ function cekForm() {
     alert("Pilihan buku tidak boleh kosong");
     return false;
   }
+
+  const bukuDitemukan = buku.find((buku) => nama === pilihBuku);
+  if (!bukuDitemukan) {
+    alert("Buku yang dipilih tidak ditemukan");
+    return false;
+  }
+  if (jumlah > bukuDitemukan.jumlah) {
+    alert("Jumlah buku yang dipesan melebihi stok yang tersedia");
+    return false;
+  }
+  alert("Silahkan ambil buku anda");
+  return true;
 }
